@@ -28,4 +28,4 @@ jobs:
       platform: ${{ matrix.platform }}
       branch: ${{ github.event.inputs.branch || 'Piers' }}
     secrets:
-      GH_TOKEN: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+      GH_TOKEN: ${{ secrets.GH_TOKEN }}

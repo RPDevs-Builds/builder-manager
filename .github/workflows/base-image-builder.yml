@@ -18,7 +18,7 @@ jobs:
     name: Build & Scan Base Images
     runs-on:
       group: llmadmin01
-      labels: [self-hosted, linux, t430]
+      labels: [self-hosted, linux64, heavy]
     permissions:
       contents: write
       packages: write
@@ -45,7 +45,7 @@ jobs:
       with:
         registry: ${{ env.REGISTRY }}
         username: ${{ github.actor }}
-        password: ${{ secrets.SYNC_TOKEN }}
+        password: ${{ secrets.GH_TOKEN }}
 
     - name: Extract metadata
       id: meta

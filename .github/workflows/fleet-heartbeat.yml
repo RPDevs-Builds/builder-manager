@@ -13,7 +13,7 @@ jobs:
     - name: Fetch Fleet Status
       id: pulse-check
       env:
-        GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         echo "📡 Querying GitHub API for runner statuses..."
         RUNNERS_JSON=$(gh api /orgs/RPDevs-Builds/actions/runners)

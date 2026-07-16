@@ -53,7 +53,7 @@ jobs:
 
     - name: Scan and Collect Assets
       env:
-        GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         echo "### 🚢 Docker Asset Discovery Report" > discovery_report.md
         echo "Scanning and collecting Docker assets..." >> discovery_report.md
@@ -132,7 +132,7 @@ jobs:
     steps:
     - name: Audit GHCR
       env:
-        GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         PACKAGES=$(gh api /orgs/RPDevs-Builds/packages?package_type=container --paginate)
 
@@ -170,7 +170,7 @@ jobs:
     steps:
     - name: Clean GHCR
       env:
-        GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         PACKAGES=$(gh api /orgs/RPDevs-Builds/packages?package_type=container --paginate --jq '.[].name')
         NOW=$(date +%s)
@@ -223,7 +223,7 @@ jobs:
 
     - name: Run Dependency Scanner
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN || secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: python dependency/scan_dependencies.py
 
     - name: Commit and Push Changes
@@ -252,7 +252,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.SYNC_TOKEN }}
+        password: ${{ secrets.GH_TOKEN }}
 
     - name: Pull, Tag, and Push
       run: |
@@ -382,7 +382,7 @@ jobs:
     steps:
     - name: Emit Repository Dispatch
       env:
-        GH_TOKEN: ${{ secrets.SYNC_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         gh api -X POST /repos/RPDevs-Builds/delivery-manager/dispatches \
           -f event_type='publish_artifact' \
