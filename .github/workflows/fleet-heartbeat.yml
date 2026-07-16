@@ -19,7 +19,7 @@ jobs:
         RUNNERS_JSON=$(gh api /orgs/RPDevs-Builds/actions/runners)
 
         # Extract statuses based on the specific hardware labels we set earlier
-        T430_STATUS=$(echo "$RUNNERS_JSON" | jq -r '.runners[] | select(.labels[].name == "lite") | .status' | head -n 1)
+        T430_STATUS=$(echo "$RUNNERS_JSON" | jq -r '.runners[] | select(.labels[].name == "lightweight") | .status' | head -n 1)
         LLM_STATUS=$(echo "$RUNNERS_JSON" | jq -r '.runners[] | select(.labels[].name == "heavy") | .status' | head -n 1)
 
         echo "T430 (Cache Hub): ${T430_STATUS:-Not Found}"
