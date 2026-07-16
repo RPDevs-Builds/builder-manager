@@ -33,20 +33,20 @@ jobs:
       - name: Trigger Dependency Engine
         if: ${{ inputs.run_dependency_engine }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh workflow run dependency-engine.yml -f kodi_branch="${{ inputs.kodi_branch }}"
 
       - name: Trigger Cache Analytics
         if: ${{ inputs.run_cache_analytics }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh workflow run cache-analytics.yml
 
       - name: Trigger Warm Up Caches
         if: ${{ inputs.run_warmup_caches }}
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
           gh workflow run warmup-caches.yml

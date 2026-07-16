@@ -252,7 +252,7 @@ jobs:
     - name: Create GitHub Release
       if: matrix.project.name != 'dummy'
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         gh release create "${{ matrix.project.name }}-${{ steps.version.outputs.VERSION }}" \
           --title "Release ${{ matrix.project.name }}-${{ steps.version.outputs.VERSION }}" \

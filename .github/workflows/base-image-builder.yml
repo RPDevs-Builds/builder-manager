@@ -94,7 +94,7 @@ jobs:
 
     - name: Create GitHub Release
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         gh release create "base-${{ matrix.image }}-${{ steps.version.outputs.VERSION }}" \
           --title "Release base-${{ matrix.image }}-${{ steps.version.outputs.VERSION }}" \

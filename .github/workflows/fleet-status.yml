@@ -14,21 +14,25 @@ jobs:
 
     - name: Fetch Workflow Status
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
       run: |
         mkdir -p status
-        gh run list --workflow=build-engine.yml --limit 1 --json status,conclusion,createdAt,url > status/build-engine.json
-        gh run list --workflow=ghcr-auditor.yml --limit 1 --json status,conclusion,createdAt,url > status/ghcr-auditor.json
-        gh run list --workflow=docker-collector.yml --limit 1 --json status,conclusion,createdAt,url > status/docker-collector.json
+
+        # Fetch last run status for each core workflow (suppress error if workflow has never run)
+        gh run list --workflow=build-engine.yml --limit 1 --json status,conclusion,createdAt,url > status/build-engine.json 2>/dev/null || echo '[]' > status/build-engine.json
+        gh run list --workflow=registry-manager.yml --limit 1 --json status,conclusion,createdAt,url > status/registry-manager.json 2>/dev/null || echo '[]' > status/registry-manager.json
+        gh run list --workflow=fleet-heartbeat.yml --limit 1 --json status,conclusion,createdAt,url > status/fleet-heartbeat.json 2>/dev/null || echo '[]' > status/fleet-heartbeat.json
+        gh run list --workflow=cache-analytics.yml --limit 1 --json status,conclusion,createdAt,url > status/cache-analytics.json 2>/dev/null || echo '[]' > status/cache-analytics.json
 
         jq -n '{
           "last_updated": (now | todate),
           "workflows": {
             "build_engine": [inputs][0][0],
-            "ghcr_auditor": [inputs][1][0],
-            "docker_collector": [inputs][2][0]
+            "registry_manager": [inputs][1][0],
+            "fleet_heartbeat": [inputs][2][0],
+            "cache_analytics": [inputs][3][0]
           }
-        }' status/build-engine.json status/ghcr-auditor.json status/docker-collector.json > fleet-status.json
+        }' status/build-engine.json status/registry-manager.json status/fleet-heartbeat.json status/cache-analytics.json > fleet-status.json
 
     - name: Upload Status Artifact
       uses: actions/upload-artifact@v4
