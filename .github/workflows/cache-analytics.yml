@@ -11,9 +11,7 @@ env:
 jobs:
   generate-dashboard:
     name: Generate Cache Metrics
-    runs-on:
-      group: llmadmin01
-      labels: [self-hosted, linux64, heavy]
+    runs-on: [self-hosted, linux64, heavy, llmadmin01]
     permissions:
       issues: write
       contents: read

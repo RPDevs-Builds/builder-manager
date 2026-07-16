@@ -288,31 +288,31 @@ jobs:
         - platform: linux
           host_triplet: x86_64-linux-gnu
           arch_name: linux-x86_64
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
         - platform: linux
           host_triplet: aarch64-linux-gnu
           arch_name: linux-arm64
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
         - platform: android
           host_triplet: aarch64-linux-android
           arch_name: android-arm64
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
         - platform: osx64
           host_triplet: x86_64-apple-darwin
           arch_name: osx64
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
         - platform: ios
           host_triplet: aarch64-apple-darwin
           arch_name: ios
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
         - platform: tvos
           host_triplet: aarch64-apple-darwin
           arch_name: tvos
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
         - platform: win64
           host_triplet: x86_64-w64-mingw32
           arch_name: win64
-          runner: '{"group": "llmadmin01", "labels": ["self-hosted", "linux", "heavy"]}'
+          runner: '["self-hosted", "linux", "heavy", "llmadmin01"]'
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4

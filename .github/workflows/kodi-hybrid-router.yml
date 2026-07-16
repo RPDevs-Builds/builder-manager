@@ -81,9 +81,7 @@ jobs:
   try-medium:
     needs: [determine-tier, try-hosted]
     if: always() && (needs.determine-tier.outputs.start_tier == 'medium' || needs.try-hosted.result == 'failure')
-    runs-on:
-      group: ${{ needs.determine-tier.outputs.runner_group }}
-      labels: [self-hosted, '${{ needs.determine-tier.outputs.os_label }}', medium]
+    runs-on: [self-hosted, '${{ needs.determine-tier.outputs.os_label }}', lightweight]
     timeout-minutes: 15
     steps:
       - uses: ./.github/actions/kodi-build-depends-payload
@@ -95,9 +93,7 @@ jobs:
   try-heavy:
     needs: [determine-tier, try-medium]
     if: always() && (needs.determine-tier.outputs.start_tier == 'heavy' || needs.try-medium.result == 'failure')
-    runs-on:
-      group: ${{ needs.determine-tier.outputs.runner_group }}
-      labels: [self-hosted, '${{ needs.determine-tier.outputs.os_label }}', heavy]
+    runs-on: [self-hosted, '${{ needs.determine-tier.outputs.os_label }}', heavy]
     timeout-minutes: 360
     steps:
       - uses: ./.github/actions/kodi-build-depends-payload

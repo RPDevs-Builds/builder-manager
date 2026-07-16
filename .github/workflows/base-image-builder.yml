@@ -16,9 +16,7 @@ env:
 jobs:
   build-and-scan:
     name: Build & Scan Base Images
-    runs-on:
-      group: llmadmin01
-      labels: [self-hosted, linux64, heavy]
+    runs-on: [self-hosted, linux64, heavy, llmadmin01]
     permissions:
       contents: write
       packages: write

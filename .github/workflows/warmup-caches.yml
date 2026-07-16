@@ -11,9 +11,7 @@ env:
 
 jobs:
   warmup-npm:
-    runs-on:
-      group: llmadmin01
-      labels: [self-hosted, linux64, heavy]
+    runs-on: [self-hosted, linux64, heavy, llmadmin01]
     steps:
     - name: Cache Check
       run: |
@@ -28,9 +26,7 @@ jobs:
         npm cache verify
 
   warmup-go:
-    runs-on:
-      group: llmadmin01
-      labels: [self-hosted, linux64, heavy]
+    runs-on: [self-hosted, linux64, heavy, llmadmin01]
     steps:
     - name: Cache Check
       run: |
@@ -45,9 +41,7 @@ jobs:
         go install github.com/yuin/goldmark@latest || true
 
   warmup-rust:
-    runs-on:
-      group: llmadmin01
-      labels: [self-hosted, linux64, heavy]
+    runs-on: [self-hosted, linux64, heavy, llmadmin01]
     steps:
     - name: Cache Check
       run: |
@@ -59,9 +53,7 @@ jobs:
         cargo install cargo-edit --no-default-features --features vendored-openssl || true
 
   warmup-python:
-    runs-on:
-      group: llmadmin01
-      labels: [self-hosted, linux64, heavy]
+    runs-on: [self-hosted, linux64, heavy, llmadmin01]
     steps:
     - name: Cache Check
       run: |

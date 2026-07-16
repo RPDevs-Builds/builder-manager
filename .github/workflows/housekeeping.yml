@@ -18,9 +18,7 @@ jobs:
             runner_label: t430
           - target_node: llmadmin01
             runner_label: llmadmin01
-    runs-on:
-      group: ${{ matrix.target_node }}
-      labels: [self-hosted, linux64, "${{ matrix.runner_label }}"]
+    runs-on: [self-hosted, linux64, "${{ matrix.runner_label }}"]
     steps:
     - name: Prune Local Docker Daemons
       run: |
