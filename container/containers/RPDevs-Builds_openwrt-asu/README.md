@@ -18,10 +18,10 @@ docker compose up -d
 ## 🌐 Ingress Integration
 
 - **Internal LAN (Nginx Proxy Manager)**:
-  - Domain: `asu.rpdevs.local` / `sysupgrade.rpdevs.local`
+  - Domain: `sysupgrade.local.iamrp.dev`
   - Target: `http://192.168.1.x:8000`
 - **External WAN (Cloudflare Tunnel)**:
-  - Domain: `https://asu.rpdevs.com`
+  - Domain: `https://sysupgrade.iamrp.dev`
 
 ## 📡 API Endpoints
 
