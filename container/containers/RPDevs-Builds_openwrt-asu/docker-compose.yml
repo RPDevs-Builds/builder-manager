@@ -1,0 +1,33 @@
+services:
+  server:
+    image: "ghcr.io/openwrt/asu:latest"
+    restart: unless-stopped
+    command: uv run uvicorn --host 0.0.0.0 --port 8000 asu.main:app
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./asu.toml:/app/asu.toml:ro
+      - /mnt/data/openwrt-asu/public/store:/public/store:ro
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  worker:
+    image: "ghcr.io/openwrt/asu:latest"
+    restart: unless-stopped
+    command: uv run rqworker --logging_level INFO
+    environment:
+      - REDIS_URL=redis://redis:6379/0
+    volumes:
+      - ./asu.toml:/app/asu.toml:ro
+      - /mnt/data/openwrt-asu/public:/public:rw
+      - /var/run/docker.sock:/var/run/docker.sock:rw
+    depends_on:
+      - redis
+
+  redis:
+    image: "redis:alpine"
+    restart: unless-stopped
+    volumes:
+      - /mnt/data/openwrt-asu/redis-data:/data:rw

@@ -1,0 +1,28 @@
+# OpenWrt Attended Sysupgrade (ASU) Server Configuration
+# RPDevs Infrastructure Standard
+
+upstream_url = "https://downloads.openwrt.org"
+allow_defaults = false
+log_level = "INFO"
+
+# Container settings
+base_container = "ghcr.io/openwrt/imagebuilder"
+
+# Caching & Time-To-Live
+build_ttl = "30d"
+build_ttl_unversioned = "7d"
+build_defaults_ttl = "1h"
+build_failure_ttl = "1h"
+max_pending_jobs = 200
+job_timeout = "15m"
+
+# Allowed external repository URL prefixes for custom feeds
+repository_allow_list = [
+    "https://raw.githubusercontent.com/pesa1234/",
+    "https://github.com/pesa1234/",
+    "https://git.openwrt.org/",
+    "https://downloads.openwrt.org/",
+    "https://github.com/openwrt/",
+    "https://github.com/RPDevs-Builds/",
+    "https://github.com/RPDevs-Vault/"
+]
