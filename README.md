@@ -39,6 +39,9 @@ All automated processes are executed via GitHub Action workflows located in `.gi
 | **`build-engine.yml`** | Repository Dispatch (`collect_docker_assets`) | Automatically compiles individual OCI images defined under `/container/containers/` and publishes them to GitHub Container Registry (GHCR). |
 | **`warmup-caches.yml`** | Weekly or Manual | Triggers weekly jobs on self-hosted runners to warm up package cache volumes for **NPM**, **Go**, **Cargo**, and **Python Pip/Poetry**. |
 | **`registry-manager.yml`** | Scheduled, Dispatch, or Push | A unified engine that handles dependency compilation, organization dependency scanning, GHCR auditing, OCI image mirroring, stale package pruning, and docker asset collection. |
+| **`kodi-build-release.yml`** | Manual, Push, Pull Request | Compiles and packages Kodi release builds for Linux, Windows, and Android, utilizing high-speed NFS caching via Cloudflare Tunnel. |
+| **`kodi-build-depends.yml`** | Manual, Schedule | Compiles and packages Kodi build dependencies (e.g., for macOS and Android) and publishes them as GitHub releases. |
+| **`kodi-hybrid-router.yml`** | Workflow Call | Reusable routing workflow to dynamically determine the optimal runner tier for Kodi builds (hosted vs self-hosted). |
 
 ---
 
@@ -50,17 +53,17 @@ The organization-wide dependency scanner can be triggered manually from the repo
 # Automatically uses your authenticated GitHub CLI token
 GH_TOKEN=$(gh auth token) python3 dependency/scan_dependencies.py
 ```
-This script queries both `RPDevs-Builds` and `RPDevs-Builds` organizations, scans all repositories for files like `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`, `addon.xml`, and writes the compiled registry database to `dependency/dependency_registry.json`.
+This script queries both `RPDevs-Builds` and `RPDevs-Vault` organizations, scans all repositories for files like `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`, `addon.xml`, and writes the compiled registry database to `dependency/dependency_registry.json`.
 
 ### 2. Custom Container Build Configuration
 To define a new build target:
-1. Create a subdirectory under `container/containers/RPDevs-Builds_<name>` or `container/containers/<name>`.
+1. Create a subdirectory under `container/containers/RPDevs-Vault_<name>` or `container/containers/<name>`.
 2. Add a `Dockerfile`, a `README.md` documenting the image name, and a `command.txt` detailing the runtime command.
 3. Register the target inside `container/manifest.yaml`:
    ```yaml
    projects:
      - name: new-service
-       source_url: https://github.com/RPDevs-Builds/new-service.git
+       source_url: https://github.com/RPDevs-Vault/new-service.git
        branch: main
        platforms: [linux/amd64, linux/arm64]
    ```

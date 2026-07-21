@@ -1,1 +1,1 @@
-docker run -d --name RPDevs-Builds_LiveTerm ghcr.io/rpdevs-vault/rpdevs-vault_liveterm:latest
+docker run -d --name RPDevs-Vault_LiveTerm ghcr.io/rpdevs-vault/rpdevs-vault_liveterm:latest

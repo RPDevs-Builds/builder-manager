@@ -1,4 +1,4 @@
-# 📦 RPDevs-Builds_send
-- **Source Repo:** [`RPDevs-Builds/send`](https://github.com/RPDevs-Builds/send)
+# 📦 RPDevs-Vault_send
+- **Source Repo:** [`RPDevs-Vault/send`](https://github.com/RPDevs-Vault/send)
 - **Image:** `ghcr.io/rpdevs-vault/rpdevs-vault_send:latest`
 - **Command:** See [`command.txt`](./command.txt)

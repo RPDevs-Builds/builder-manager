@@ -4,7 +4,7 @@ services:
     container_name: t430-linux-builder
     restart: always
     environment:
-      - GH_OWNER=RPDevs-Builds
+      - GH_OWNER=RPDevs-Vault
       - GH_TOKEN=${GH_PAT}
       - RUNNER_NAME=t430-runner-01
       - RUNNER_LABELS=self-hosted,linux,t430
@@ -24,7 +24,7 @@ services:
     container_name: t430-lite-linux-builder
     restart: always
     environment:
-      - GH_OWNER=RPDevs-Builds
+      - GH_OWNER=RPDevs-Vault
       - GH_TOKEN=${GH_PAT}
       - RUNNER_NAME=t430-lite-runner-01
       - RUNNER_LABELS=self-hosted,linux,t430,lite

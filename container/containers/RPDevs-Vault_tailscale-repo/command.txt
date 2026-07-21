@@ -1,1 +1,1 @@
-docker run -d --name RPDevs-Builds_tailscale-repo ghcr.io/rpdevs-vault/rpdevs-vault_tailscale-repo:latest
+docker run -d --name RPDevs-Vault_tailscale-repo ghcr.io/rpdevs-vault/rpdevs-vault_tailscale-repo:latest

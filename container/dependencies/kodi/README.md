@@ -4,7 +4,7 @@ This package contains the pre-compiled toolchain required to build Kodi (XBMC) f
 
 ## Dependent Software
 - **Kodi (Mainline)**
-- **Custom RPDevs-Builds Kodi Forks**
+- **Custom RPDevs-Vault Kodi Forks**
 - **Kodi Addon Builders**
 
 ## Build Information

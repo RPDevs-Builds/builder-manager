@@ -1,1 +1,1 @@
-docker run -d --name RPDevs-Builds_debrid-media-manager ghcr.io/rpdevs-vault/rpdevs-vault_debrid-media-manager:latest
+docker run -d --name RPDevs-Vault_debrid-media-manager ghcr.io/rpdevs-vault/rpdevs-vault_debrid-media-manager:latest

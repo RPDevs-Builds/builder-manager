@@ -2,11 +2,11 @@
 
 Welcome to the **container-manager** console. This repository serves as the Tier 2 Compilation Registry and asset builder, responsible for compiling OCI Docker images, hosting our custom builder base images, managing self-hosted runner caching systems, and mirroring packages to the GHCR registry.
 
-* **Tier 0:** [github-manager](https://github.com/RPDevs-Builds/github-manager) | **Tier 0.5:** [monitor-manager](https://github.com/RPDevs-Builds/monitor-manager)
-* **Tier 1:** [vault-manager](https://github.com/RPDevs-Builds/vault-manager) | **Tier 1.5:** [identity-manager](https://github.com/RPDevs-Builds/identity-manager)
-* **Tier 2:** [container-manager](https://github.com/RPDevs-Builds/container-manager) | **Tier 3:** [project-manager](https://github.com/RPDevs-Builds/project-manager)
-* **Tier 4:** [distributor-manager](https://github.com/RPDevs-Builds/distributor-manager) | **Tier 4.5:** [deploy-manager](https://github.com/RPDevs-Builds/deploy-manager)
-* **Tier 5:** [thought-manager](https://github.com/RPDevs-Builds/thought-manager)
+* **Tier 0:** [github-manager](https://github.com/RPDevs-Vault/github-manager) | **Tier 0.5:** [monitor-manager](https://github.com/RPDevs-Vault/monitor-manager)
+* **Tier 1:** [vault-manager](https://github.com/RPDevs-Vault/vault-manager) | **Tier 1.5:** [identity-manager](https://github.com/RPDevs-Vault/identity-manager)
+* **Tier 2:** [container-manager](https://github.com/RPDevs-Vault/container-manager) | **Tier 3:** [project-manager](https://github.com/RPDevs-Vault/project-manager)
+* **Tier 4:** [distributor-manager](https://github.com/RPDevs-Vault/distributor-manager) | **Tier 4.5:** [deploy-manager](https://github.com/RPDevs-Vault/deploy-manager)
+* **Tier 5:** [thought-manager](https://github.com/RPDevs-Vault/thought-manager)
 
 ---
 
@@ -21,7 +21,7 @@ Welcome to the **container-manager** console. This repository serves as the Tier
 ## 🚀 Automation & Workflows
 
 - **[Container Build Engine](./.github/workflows/build-engine.yml):** Builds and pushes subdirectories in `/build/`, `/images/`, `/runners/`, or projects registered in `manifest.yaml` upon pushes to `main`.
-- **[Docker Asset Collector](./.github/workflows/docker-collector.yml):** Weekly scan of all repos in `IamRPDev` and `RPDevs-Builds` that discovers new `Dockerfiles` or `compose.yml` assets and archives them into `/containers/`.
+- **[Docker Asset Collector](./.github/workflows/docker-collector.yml):** Weekly scan of all repos in `IamRPDev` and `RPDevs-Vault` that discovers new `Dockerfiles` or `compose.yml` assets and archives them into `/containers/`.
 - **[GHCR Auditor](./.github/workflows/ghcr-auditor.yml):** Weekly audit tracking package sizes, versions, and security metadata across the organization's GHCR namespace.
 - **[Stale Package Cleanup](./.github/workflows/stale-package-cleanup.yml):** Prunes untagged images, old tags, and orphaned container layers.
 - **[OCI Mirror](./.github/workflows/oci-mirror.yml):** Automatically mirrors upstream images directly to our GHCR namespace.

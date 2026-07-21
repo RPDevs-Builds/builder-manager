@@ -1,1 +1,1 @@
-docker run -d --name RPDevs-Builds_open-webui ghcr.io/rpdevs-vault/rpdevs-vault_open-webui:latest
+docker run -d --name RPDevs-Vault_open-webui ghcr.io/rpdevs-vault/rpdevs-vault_open-webui:latest

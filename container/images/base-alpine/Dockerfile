@@ -1,8 +1,8 @@
 FROM alpine:latest
 
 # Set common labels
-LABEL org.opencontainers.image.source="https://github.com/RPDevs-Builds/container-manager"
-LABEL org.opencontainers.image.vendor="RPDevs-Builds"
+LABEL org.opencontainers.image.source="https://github.com/RPDevs-Vault/container-manager"
+LABEL org.opencontainers.image.vendor="RPDevs-Vault"
 LABEL org.opencontainers.image.title="base-alpine"
 
 # Update packages, install certificates and tzdata

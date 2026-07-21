@@ -1,4 +1,4 @@
-# 📦 RPDevs-Builds_rvx-builds
-- **Source Repo:** [`RPDevs-Builds/rvx-builds`](https://github.com/RPDevs-Builds/rvx-builds)
+# 📦 RPDevs-Vault_rvx-builds
+- **Source Repo:** [`RPDevs-Vault/rvx-builds`](https://github.com/RPDevs-Vault/rvx-builds)
 - **Image:** `ghcr.io/rpdevs-vault/rpdevs-vault_rvx-builds:latest`
 - **Command:** See [`command.txt`](./command.txt)

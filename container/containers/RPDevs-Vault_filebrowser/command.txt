@@ -1,1 +1,1 @@
-docker run -d --name RPDevs-Builds_filebrowser ghcr.io/rpdevs-vault/rpdevs-vault_filebrowser:latest
+docker run -d --name RPDevs-Vault_filebrowser ghcr.io/rpdevs-vault/rpdevs-vault_filebrowser:latest

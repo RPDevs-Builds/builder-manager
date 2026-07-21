@@ -11,7 +11,7 @@ This repository is the centralized manager for building, caching, and releasing 
 ### 2. Scan Organizations for Dependencies
 * **Workflow**: `.github/workflows/scan-dependencies.yml`
 * **Script**: `scan_dependencies.py`
-* **Description**: Weekly or manually triggers a scan across all repositories under the `RPDevs-Builds` and `RPDevs-Builds` organizations. It checks the default branch roots for key dependency files (e.g., `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`, `addon.xml`, `Dockerfile`).
+* **Description**: Weekly or manually triggers a scan across all repositories under the `RPDevs-Builds` and `RPDevs-Vault` organizations. It checks the default branch roots for key dependency files (e.g., `package.json`, `requirements.txt`, `go.mod`, `Cargo.toml`, `addon.xml`, `Dockerfile`).
 
 ## Dependency Registry
 All identified repositories and their respective dependency files are saved to:

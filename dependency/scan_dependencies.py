@@ -6,7 +6,7 @@ import urllib.request
 import urllib.error
 
 # Config
-ORGS = ["RPDevs-Builds", "RPDevs-Builds"]
+ORGS = ["RPDevs-Builds", "RPDevs-Vault"]
 GH_TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or os.environ.get("GH_PAT")
 
 if not GH_TOKEN:

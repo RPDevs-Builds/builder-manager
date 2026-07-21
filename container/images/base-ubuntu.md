@@ -1,3 +1,3 @@
 # 📦 base-ubuntu
 Image: `ghcr.io/rpdevs-vault/base-ubuntu:latest`
-Registry: [GHCR](https://github.com/orgs/RPDevs-Builds/packages/container/base-ubuntu)
+Registry: [GHCR](https://github.com/orgs/RPDevs-Vault/packages/container/base-ubuntu)

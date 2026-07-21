@@ -1,6 +1,6 @@
 # Master Dependency Inventory
 
-This document tracks all pre-compiled toolchains and dependencies hosted for the RPDevs-Builds build fleet. By centrally managing these dependencies, we bypass the need for lengthy full-source compilations.
+This document tracks all pre-compiled toolchains and dependencies hosted for the RPDevs-Vault build fleet. By centrally managing these dependencies, we bypass the need for lengthy full-source compilations.
 
 ## Software Inventory
 

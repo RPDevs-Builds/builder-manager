@@ -13,27 +13,27 @@ projects:
     platforms: [linux/amd64, linux/arm64]
 
   - name: t430-runner
-    source_url: https://github.com/RPDevs-Builds/T430-Runner.git
+    source_url: https://github.com/RPDevs-Vault/T430-Runner.git
     branch: main
     platforms: [linux/amd64]
 
   - name: open-webui
-    source_url: https://github.com/RPDevs-Builds/open-webui.git
+    source_url: https://github.com/RPDevs-Vault/open-webui.git
     branch: main
     platforms: [linux/amd64, linux/arm64]
 
   - name: ollama
-    source_url: https://github.com/RPDevs-Builds/ollama.git
+    source_url: https://github.com/RPDevs-Vault/ollama.git
     branch: main
     platforms: [linux/amd64, linux/arm64]
 
   - name: nextdns
-    source_url: https://github.com/RPDevs-Builds/nextdns.git
+    source_url: https://github.com/RPDevs-Vault/nextdns.git
     branch: master
     platforms: [linux/amd64, linux/arm64]
 
   - name: Stirling-PDF
-    source_url: https://github.com/RPDevs-Builds/Stirling-PDF.git
+    source_url: https://github.com/RPDevs-Vault/Stirling-PDF.git
     branch: main
     platforms: [linux/amd64, linux/arm64]
 

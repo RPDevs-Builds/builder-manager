@@ -1,4 +1,4 @@
-# 📦 RPDevs-Builds_ollama
-- **Source Repo:** [`RPDevs-Builds/ollama`](https://github.com/RPDevs-Builds/ollama)
+# 📦 RPDevs-Vault_ollama
+- **Source Repo:** [`RPDevs-Vault/ollama`](https://github.com/RPDevs-Vault/ollama)
 - **Image:** `ghcr.io/rpdevs-vault/rpdevs-vault_ollama:latest`
 - **Command:** See [`command.txt`](./command.txt)

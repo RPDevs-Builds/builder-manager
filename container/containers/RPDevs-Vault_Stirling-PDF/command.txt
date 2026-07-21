@@ -1,1 +1,1 @@
-docker run -d --name RPDevs-Builds_Stirling-PDF ghcr.io/rpdevs-vault/rpdevs-vault_stirling-pdf:latest
+docker run -d --name RPDevs-Vault_Stirling-PDF ghcr.io/rpdevs-vault/rpdevs-vault_stirling-pdf:latest
